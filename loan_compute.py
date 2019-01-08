@@ -1,12 +1,12 @@
 # Author: Elvis Li
 # Created: 2018/11/13 15:52
-
+# 这个脚本是用来计算贷款利息的。
 from functools import partial
 
 start_month = 2
-months = 30
-rate = 6.3
-loan = 125000
+months = 360
+rate = 4.11
+loan = 1550000
 monthly_rate = rate / 100 / 12
 payment = (monthly_rate / (1 - (1 + monthly_rate)**(-months))) * loan
 capital_left = loan

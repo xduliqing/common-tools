@@ -1,3 +1,4 @@
+# 这个脚本是用来计算伤害个税的
 
 
 def get_pure_salary(income, deduction=0):
@@ -34,6 +35,9 @@ def get_pure_salary(income, deduction=0):
     return salary - tax
 
 
-print(get_pure_salary(40000, 1000) - get_pure_salary(40000, 0))
-print(get_pure_salary(36670, 3000) - get_pure_salary(36670, 0))
-print(get_pure_salary(36670, 3000))
+def get_saved_salary(income, cur_deduct, pre_deduct=0):
+    return get_pure_salary(income, cur_deduct) - get_pure_salary(income, pre_deduct)
+
+
+if __name__ == "__main__":
+    print(get_saved_salary(40000, 3000))
